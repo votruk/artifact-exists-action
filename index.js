@@ -20,6 +20,7 @@ async function run() {
         tempArtifactPath,
         downloadOptions
       );
+      await fs.rmdir(tempArtifactPath);
       core.info(`Artifact ${downloadResponse.artifactName} exists.`);
       core.setOutput("exists", true);
     } catch (err) {
